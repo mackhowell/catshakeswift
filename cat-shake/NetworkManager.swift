@@ -38,7 +38,9 @@ struct Video {
 
 struct NetworkManager {
     
-    static func getYoutubePlaylist() {
+    typealias getPlaylistCompletionBlock = (list: VideoList, error: NSError?) -> ()
+    
+    static func getYoutubePlaylist(completionClosure: getPlaylistCompletionBlock) {
         
         let file = NSBundle.mainBundle().pathForResource("keys", ofType: "plist")
         guard let keysFile = file else {
@@ -59,7 +61,8 @@ struct NetworkManager {
         Alamofire.request(.GET, playlistURL)
             .responseJSON { response in
                 let videoList = VideoList(json: response.result.value!)
-                print(videoList)
+//                print(videoList)
+                completionClosure(list: videoList, error: nil)
             }
     }
 

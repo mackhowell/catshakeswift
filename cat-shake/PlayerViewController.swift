@@ -12,8 +12,11 @@ class PlayerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.whiteColor()
         
-        NetworkManager.getYoutubePlaylist()
+        NetworkManager.getYoutubePlaylist({(list, error) -> () in
+            print(list)
+        })
     }
 
     override func didReceiveMemoryWarning() {
