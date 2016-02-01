@@ -138,7 +138,6 @@
 		019BB5101C5EF2CC00B6A085 = {
 			isa = PBXGroup;
 			children = (
-				019BB56C1C5F2F9D00B6A085 /* YouTubePlayer.framework.dSYM */,
 				019BB5541C5EFF4200B6A085 /* frameworks */,
 				019BB51B1C5EF2CC00B6A085 /* cat-shake */,
 				019BB5301C5EF2CC00B6A085 /* cat-shakeTests */,
@@ -200,6 +199,7 @@
 				019BB5571C5F009700B6A085 /* Alamofire.framework.dSYM */,
 				019BB5581C5F009700B6A085 /* SnapKit.framework.dSYM */,
 				019BB5591C5F009700B6A085 /* SwiftyJSON.framework.dSYM */,
+				019BB56C1C5F2F9D00B6A085 /* YouTubePlayer.framework.dSYM */,
 			);
 			name = frameworks;
 			sourceTree = "<group>";

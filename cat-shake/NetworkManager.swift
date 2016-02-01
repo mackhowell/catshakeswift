@@ -11,7 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 struct VideoList {
-    var video: Video?
     var arrayOfVideos: [Video] = []
     
     init(json: AnyObject) {
@@ -23,6 +22,20 @@ struct VideoList {
                 arrayOfVideos.append(video)
             }
         }
+    }
+    
+    func randomVideo(currentVideo: Video?) -> Video {
+        let randomIndex = Int(arc4random_uniform(UInt32(arrayOfVideos.count)))
+        let randomVid = arrayOfVideos[randomIndex]
+        
+        guard let currVid = currentVideo else {
+            return randomVid
+        }
+        
+        if randomVid.id == currVid.id {
+            randomVideo(currentVideo)
+        }
+        return randomVid
     }
 }
 
