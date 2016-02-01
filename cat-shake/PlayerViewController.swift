@@ -14,6 +14,7 @@ class PlayerViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
         
+        // Gets first 50 videos
         NetworkManager.getYoutubePlaylist({(list, error) -> () in
             print(list)
         })
