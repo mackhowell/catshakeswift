@@ -8,14 +8,11 @@
 
 import UIKit
 
-class InterstitialViewController: UIViewController {
+class InterstitialViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.redColor()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }

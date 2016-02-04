@@ -2,4 +2,5 @@ github "SnapKit/SnapKit" >= 0.15.0
 github "SwiftyJSON/SwiftyJSON"
 github "Alamofire/Alamofire" ~> 3.0
 github "gilesvangruisen/Swift-YouTube-Player"
+github "0xced/XCDYouTubeKit" ~> 2.5
 

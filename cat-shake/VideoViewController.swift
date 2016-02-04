@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  VideoViewController.swift
 //  cat-shake
 //
-//  Created by Mack on 1/31/16.
+//  Created by Mack on 2/3/16.
 //  Copyright © 2016 Mack. All rights reserved.
 //
 
@@ -10,15 +10,12 @@ import UIKit
 import YouTubePlayer
 import SnapKit
 
-class PlayerViewController: UIViewController {
-    
+class VideoViewController: BaseViewController {
     let videoView = YouTubePlayerView()
-    var videoList: VideoList?
-    var currentVideo: Video?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.blueColor()
         
         // Gets first 50 videos
         NetworkManager.getYoutubePlaylist({(list, error) -> () in
@@ -28,7 +25,7 @@ class PlayerViewController: UIViewController {
         
         setupPlayerView()
     }
-
+    
     func setupPlayerView() {
         view.addSubview(videoView)
         videoView.snp_remakeConstraints { (make) -> Void in
@@ -48,7 +45,7 @@ class PlayerViewController: UIViewController {
     
 }
 
-extension PlayerViewController: YouTubePlayerDelegate {
+extension VideoViewController: YouTubePlayerDelegate {
     func playerReady(videoPlayer: YouTubePlayerView) {
         videoView.play()
     }
@@ -59,4 +56,3 @@ extension PlayerViewController: YouTubePlayerDelegate {
     func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
     }
 }
-

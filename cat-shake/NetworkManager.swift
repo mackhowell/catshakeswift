@@ -69,12 +69,11 @@ struct NetworkManager {
             return
         }
         
-        print(playlistURL)
+        print("*** getting playlist from \(playlistURL)")
         
         Alamofire.request(.GET, playlistURL)
             .responseJSON { response in
                 let videoList = VideoList(json: response.result.value!)
-//                print(videoList)
                 completionClosure(list: videoList, error: nil)
             }
     }

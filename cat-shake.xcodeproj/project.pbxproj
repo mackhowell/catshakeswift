@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		015A428A1C62FADE003372E4 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015A42891C62FADE003372E4 /* VideoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		019BB51D1C5EF2CC00B6A085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BB51C1C5EF2CC00B6A085 /* AppDelegate.swift */; };
-		019BB51F1C5EF2CC00B6A085 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BB51E1C5EF2CC00B6A085 /* PlayerViewController.swift */; };
+		019BB51F1C5EF2CC00B6A085 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BB51E1C5EF2CC00B6A085 /* BaseViewController.swift */; };
 		019BB5241C5EF2CC00B6A085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019BB5231C5EF2CC00B6A085 /* Assets.xcassets */; };
 		019BB5271C5EF2CC00B6A085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019BB5251C5EF2CC00B6A085 /* LaunchScreen.storyboard */; };
 		019BB5321C5EF2CC00B6A085 /* cat_shakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BB5311C5EF2CC00B6A085 /* cat_shakeTests.swift */; };
@@ -80,9 +81,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		015A42891C62FADE003372E4 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		019BB5191C5EF2CC00B6A085 /* cat-shake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cat-shake.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		019BB51C1C5EF2CC00B6A085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		019BB51E1C5EF2CC00B6A085 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		019BB51E1C5EF2CC00B6A085 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		019BB5231C5EF2CC00B6A085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019BB5261C5EF2CC00B6A085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019BB5281C5EF2CC00B6A085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -207,7 +209,8 @@
 		019BB55F1C5F03E000B6A085 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				019BB51E1C5EF2CC00B6A085 /* PlayerViewController.swift */,
+				019BB51E1C5EF2CC00B6A085 /* BaseViewController.swift */,
+				015A42891C62FADE003372E4 /* VideoViewController.swift */,
 				019BB55D1C5F03D100B6A085 /* InterstitialViewController.swift */,
 			);
 			name = "View Controllers";
@@ -369,8 +372,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				019BB5611C5F051000B6A085 /* NetworkManager.swift in Sources */,
-				019BB51F1C5EF2CC00B6A085 /* PlayerViewController.swift in Sources */,
+				019BB51F1C5EF2CC00B6A085 /* BaseViewController.swift in Sources */,
 				019BB51D1C5EF2CC00B6A085 /* AppDelegate.swift in Sources */,
+				015A428A1C62FADE003372E4 /* VideoViewController.swift in Sources */,
 				019BB55E1C5F03D100B6A085 /* InterstitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
