@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InterstitialViewController: BaseViewController {
+class InterstitialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

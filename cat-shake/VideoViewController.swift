@@ -7,52 +7,38 @@
 //
 
 import UIKit
-import YouTubePlayer
 import SnapKit
+import XCDYouTubeKit
 
-class VideoViewController: BaseViewController {
-    let videoView = YouTubePlayerView()
+class VideoViewController: UIViewController {
+    let player = XCDYouTubeVideoPlayerViewController()
+    let playerView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blueColor()
-        
-        // Gets first 50 videos
-        NetworkManager.getYoutubePlaylist({(list, error) -> () in
-            self.videoList = list
-            self.playVideo()
-        })
-        
         setupPlayerView()
     }
     
     func setupPlayerView() {
-        view.addSubview(videoView)
-        videoView.snp_remakeConstraints { (make) -> Void in
+        view.addSubview(playerView)
+        playerView.snp_remakeConstraints { (make) -> Void in
             make.width.equalTo(view)
             make.height.equalTo(view)
             make.center.equalTo(view)
         }
     }
     
-    func playVideo() {
-        let randomVid = videoList?.randomVideo(nil)
-        guard let selectedVideo = randomVid?.id else {
-            return
-        }
-        videoView.loadVideoID(selectedVideo)
-    }
-    
+//    func playVideo() {
+//        let randomVid = videoList?.randomVideo(nil)
+//        guard let selectedVideo = randomVid?.id else {
+//            return
+//        }
+//    }
 }
 
-extension VideoViewController: YouTubePlayerDelegate {
-    func playerReady(videoPlayer: YouTubePlayerView) {
-        videoView.play()
-    }
-    
-    func playerStateChanged(videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
-    }
-    
-    func playerQualityChanged(videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
+extension VideoViewController: PlayerDelegate {
+    func playVideo() {
+        print("")
     }
 }

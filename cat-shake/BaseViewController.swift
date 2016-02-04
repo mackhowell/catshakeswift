@@ -10,6 +10,10 @@ import UIKit
 import YouTubePlayer
 import SnapKit
 
+protocol PlayerDelegate: class {
+    func playVideo()
+}
+
 class BaseViewController: UIViewController {
     
     let videoViewController = VideoViewController()
@@ -17,6 +21,7 @@ class BaseViewController: UIViewController {
     var videoList: VideoList?
     var currentVideo: Video?
     var isPlayingVideo: Bool = false
+    weak var playDelegate: PlayerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +29,23 @@ class BaseViewController: UIViewController {
         
         // Gets first 50 videos
         NetworkManager.getYoutubePlaylist({(list, error) -> () in
-            self.videoList = list
+            if (error != nil) {
+                print("error in getting playlist closure")
+            } else {
+                self.videoList = list
+                self.playDelegate?.playVideo()
+            }
         })
         
         setupSubControllers()
-        swapScreens()
+//        swapScreens()
     }
 
     func setupSubControllers() {
-        view.addSubview(videoViewController.view)
-        addChildViewController(videoViewController)
         view.addSubview(interstitialViewController.view)
         addChildViewController(interstitialViewController)
+        view.addSubview(videoViewController.view)
+        addChildViewController(videoViewController)
     }
     
     func swapScreens() {

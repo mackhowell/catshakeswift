@@ -69,7 +69,7 @@ struct NetworkManager {
             return
         }
         
-        print("*** getting playlist from \(playlistURL)")
+        print("*** getting playlist from \(playlistURL)**")
         
         Alamofire.request(.GET, playlistURL)
             .responseJSON { response in
