@@ -34,10 +34,17 @@ class VideoViewController: UIViewController {
         guard let selectedVideo = randomVid.id else {
             return
         }
+        print("playing id: \(randomVid)")
         player = XCDYouTubeVideoPlayerViewController(videoIdentifier: selectedVideo)
         player?.presentInView(playerView)
-        player?.moviePlayer.play()
         player?.hidesBottomBarWhenPushed = true
+//        player?.prefersStatusBarHidden() = true
+        player?.preferredVideoQualities = ["XCDYouTubeVideoQualitySmall240"]
+        player?.moviePlayer.play()
+//        if player?.moviePlayer.readyForDisplay == true {
+//            print("video is ready")
+//            player?.moviePlayer.play()
+//        }
     }
     
 }
