@@ -33,7 +33,10 @@ class ContainerViewController: UIViewController {
                 print("error in getting playlist closure")
             } else {
                 self.videoList = list
-                self.videoViewController.playVideo()
+                guard let list = self.videoList else {
+                    return
+                }
+                self.videoViewController.playVideo(list)
             }
         })
     }

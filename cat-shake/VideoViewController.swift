@@ -11,7 +11,7 @@ import SnapKit
 import XCDYouTubeKit
 
 class VideoViewController: UIViewController {
-    let player = XCDYouTubeVideoPlayerViewController()
+    var player: XCDYouTubeVideoPlayerViewController?
     let playerView = UIView()
     
     override func viewDidLoad() {
@@ -29,13 +29,15 @@ class VideoViewController: UIViewController {
         }
     }
     
-    func playVideo() {
-        print("play called")
-//        let randomVid = videoList?.randomVideo(nil)
-//        guard let selectedVideo = randomVid?.id else {
-//            return
-//        }
-        
+    func playVideo(playlist: VideoList) {
+        let randomVid = playlist.randomVideo(nil)
+        guard let selectedVideo = randomVid.id else {
+            return
+        }
+        player = XCDYouTubeVideoPlayerViewController(videoIdentifier: selectedVideo)
+        player?.presentInView(playerView)
+        player?.moviePlayer.play()
+        player?.hidesBottomBarWhenPushed = true
     }
     
 }
