@@ -29,16 +29,13 @@ class VideoViewController: UIViewController {
         }
     }
     
-//    func playVideo() {
+    func playVideo() {
+        print("play called")
 //        let randomVid = videoList?.randomVideo(nil)
 //        guard let selectedVideo = randomVid?.id else {
 //            return
 //        }
-//    }
-}
-
-extension VideoViewController: PlayerDelegate {
-    func playVideo() {
-        print("")
+        
     }
+    
 }

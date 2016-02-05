@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let frame = UIScreen.mainScreen().bounds
         window = UIWindow(frame: frame)
         
-        let baseVC = BaseViewController()
+        let container = ContainerViewController()
         if let window = self.window {
-            window.rootViewController = baseVC
+            window.rootViewController = container
             window.makeKeyAndVisible()
         }
         return true
