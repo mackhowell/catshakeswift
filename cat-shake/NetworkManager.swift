@@ -24,7 +24,7 @@ struct VideoList {
         }
     }
     
-    func randomVideo(currentVideo: Video?) -> Video {
+    mutating func randomVideo(currentVideo: Video?) -> Video {
         let randomIndex = Int(arc4random_uniform(UInt32(arrayOfVideos.count)))
         let randomVid = arrayOfVideos[randomIndex]
         
@@ -35,6 +35,8 @@ struct VideoList {
         if randomVid.id == currVid.id {
             randomVideo(currentVideo)
         }
+        arrayOfVideos.removeAtIndex(randomIndex)
+        print("videos left to watch = \(arrayOfVideos.count)")
         return randomVid
     }
 }

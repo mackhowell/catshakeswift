@@ -31,7 +31,7 @@ class ContainerViewController: UIViewController {
                 guard let list = self.videoList else {
                     return
                 }
-                self.videoViewController.playVideo(list)
+                self.videoViewController.prepareVideo(list)
             }
         })
     }
@@ -54,6 +54,20 @@ class ContainerViewController: UIViewController {
         }
         
         isPlayingVideo = !isPlayingVideo
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            guard let list = videoList else {
+                print("*** nil video list ***")
+                return
+            }
+            self.videoViewController.prepareVideo(list)
+        }
     }
 }
 

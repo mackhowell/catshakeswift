@@ -13,10 +13,10 @@ import XCDYouTubeKit
 class VideoViewController: UIViewController {
     var player: XCDYouTubeVideoPlayerViewController?
     let playerView = UIView()
+    var previousVideo: Video?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = UIColor.blueColor()
         setupPlayerView()
         let defaultCenter = NSNotificationCenter.defaultCenter()
         defaultCenter.addObserver(self, selector: "playerStateDidChange", name: MPMoviePlayerLoadStateDidChangeNotification, object: nil)
@@ -35,26 +35,30 @@ class VideoViewController: UIViewController {
         print("hi")
     }
     
-    func playVideo(playlist: VideoList) {
-        let randomVid = playlist.randomVideo(nil)
-        guard let selectedVideo = randomVid.id else {
+    func prepareVideo(var playlist: VideoList) {
+        if let previoius = previousVideo {
+            let randomVid = playlist.randomVideo(previoius)
+            player?.removeFromParentViewController()
+            play(randomVid)
+        } else {
+            let randomVid = playlist.randomVideo(nil)
+            play(randomVid)
+        }
+    }
+    
+    func play(video: Video) {
+        previousVideo = video
+        guard let id = video.id else {
+            print("*** id is null in play video *** ")
             return
         }
-        print("playing id: \(selectedVideo)")
-        player = XCDYouTubeVideoPlayerViewController(videoIdentifier: selectedVideo)
+        print("about to play vid with id \(id)")
+        player = XCDYouTubeVideoPlayerViewController(videoIdentifier: id)
 //        player?.preferredVideoQualities = ["XCDYouTubeVideoQualityMedium360"]
         player?.presentInView(playerView)
         player?.moviePlayer.controlStyle = MPMovieControlStyle.None
         player?.moviePlayer.prepareToPlay()
         player?.moviePlayer.fullscreen = true
         player?.moviePlayer.play()
-        if player?.moviePlayer.readyForDisplay == true {
-            print("video is ready")
-        }
     }
-    
-    func setControlState() {
-//        player?.moviePlayer.controlStyle = MPMovieControlStyle.Fullscreen
-    }
-    
 }
