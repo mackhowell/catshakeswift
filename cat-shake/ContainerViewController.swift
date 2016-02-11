@@ -10,12 +10,7 @@ import UIKit
 import YouTubePlayer
 import SnapKit
 
-//protocol PlayerDelegate: class {
-//    func playVideo()
-//}
-
 class ContainerViewController: UIViewController {
-    
     let videoViewController = VideoViewController()
     let interstitialViewController = InterstitialViewController()
     var videoList: VideoList?
@@ -24,7 +19,7 @@ class ContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
+//        view.backgroundColor = UIColor.whiteColor()
         setupSubControllers()
         
         // Gets first 50 videos
