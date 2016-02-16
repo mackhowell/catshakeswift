@@ -79,7 +79,7 @@ class InterstitialViewController: UIViewController {
             }
         }
         self.gifView.animationImages = catGifArray;
-        self.gifView.animationDuration = 20.0
+        self.gifView.animationDuration = 1.0
         self.gifView.startAnimating()
         
         return catGifArray.map {
