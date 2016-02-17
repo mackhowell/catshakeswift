@@ -14,12 +14,13 @@ class VideoViewController: UIViewController {
     var player: XCDYouTubeVideoPlayerViewController?
     let playerView = UIView()
     var previousVideo: Video?
+    weak var delegate: TriggerVideoFromChildViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPlayerView()
-        let defaultCenter = NSNotificationCenter.defaultCenter()
-        defaultCenter.addObserver(self, selector: "playerStateDidChange", name: MPMoviePlayerLoadStateDidChangeNotification, object: nil)
+//        let defaultCenter = NSNotificationCenter.defaultCenter()
+//        defaultCenter.addObserver(self, selector: "playerStateDidChange", name: MPMoviePlayerLoadStateDidChangeNotification, object: nil)
     }
     
     func setupPlayerView() {
@@ -31,14 +32,18 @@ class VideoViewController: UIViewController {
         }
     }
     
-    func playerStateDidChange() {
-        print("hi")
-    }
+//    func playerStateDidChange() {
+//        print("player state = \(player?.moviePlayer.playbackState.rawValue)")
+//        if player?.moviePlayer.playbackState == MPMoviePlaybackState. {
+//            delegate?.prepareVideo()
+//        }
+//    }
     
     func prepareVideo(var playlist: VideoList) {
         if let previoius = previousVideo {
             let randomVid = playlist.randomVideo(previoius)
-            player?.removeFromParentViewController()
+            player?.view.removeFromSuperview()
+            player = nil
             play(randomVid)
         } else {
             let randomVid = playlist.randomVideo(nil)

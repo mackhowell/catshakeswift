@@ -10,7 +10,11 @@ import UIKit
 import YouTubePlayer
 import SnapKit
 
-class ContainerViewController: UIViewController {
+protocol TriggerVideoFromChildViewController: class {
+    func prepareVideo()
+}
+
+class ContainerViewController: UIViewController, TriggerVideoFromChildViewController {
     let videoViewController = VideoViewController()
     let interstitialViewController = InterstitialViewController()
     var videoList: VideoList?
@@ -19,7 +23,6 @@ class ContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = UIColor.whiteColor()
         setupSubControllers()
         
         // Gets first 50 videos
@@ -62,12 +65,16 @@ class ContainerViewController: UIViewController {
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
-            guard let list = videoList else {
-                print("*** nil video list ***")
-                return
-            }
-            self.videoViewController.prepareVideo(list)
+            prepareVideo()
         }
+    }
+    
+    func prepareVideo() {
+        guard let list = videoList else {
+            print("*** nil video list ***")
+            return
+        }
+        self.videoViewController.prepareVideo(list)
     }
 }
 
