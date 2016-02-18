@@ -73,6 +73,7 @@ class InterstitialViewController: UIViewController {
         "desk",
         "waving",
     ]
+    
     func gifAnimationImages(fileName: String) -> [UIImage] {
         var gifArray = [UIImage]()
         var i = 0
