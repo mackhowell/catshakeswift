@@ -16,10 +16,10 @@ class InterstitialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // view.backgroundColor = UIColor.redColor()
+     // view.backgroundColor = UIColor.redColor()
         setUpGifView()
-       // self.checkAnimationImages(self.catGifName)
-      //animateImage()
+     // self.checkAnimationImages(self.catGifName)
+     //animateImage()
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
