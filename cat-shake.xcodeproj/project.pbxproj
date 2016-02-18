@@ -32,7 +32,6 @@
 		019BB56B1C5F2F7B00B6A085 /* YouTubePlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 019BB5691C5F2F7B00B6A085 /* YouTubePlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		019BB56D1C5F2F9D00B6A085 /* YouTubePlayer.framework.dSYM in Carthage Copy DSYM Files Step */ = {isa = PBXBuildFile; fileRef = 019BB56C1C5F2F9D00B6A085 /* YouTubePlayer.framework.dSYM */; };
 		D850ED9A1C75FEFB006BAA04 /* keys (5).plist in Resources */ = {isa = PBXBuildFile; fileRef = D850ED991C75FEFB006BAA04 /* keys (5).plist */; };
-		D850ED9C1C75FF4C006BAA04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D850ED9B1C75FF4C006BAA04 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +112,6 @@
 		019BB5691C5F2F7B00B6A085 /* YouTubePlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubePlayer.framework; path = Carthage/Build/iOS/YouTubePlayer.framework; sourceTree = "<group>"; };
 		019BB56C1C5F2F9D00B6A085 /* YouTubePlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = YouTubePlayer.framework.dSYM; path = Carthage/Build/iOS/YouTubePlayer.framework.dSYM; sourceTree = "<group>"; };
 		D850ED991C75FEFB006BAA04 /* keys (5).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "keys (5).plist"; path = "../../../Downloads/keys (5).plist"; sourceTree = "<group>"; };
-		D850ED9B1C75FF4C006BAA04 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../../cat-shake/tubeshake/Images.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +171,6 @@
 				019BB5601C5F051000B6A085 /* NetworkManager.swift */,
 				019BB55F1C5F03E000B6A085 /* View Controllers */,
 				019BB5231C5EF2CC00B6A085 /* Assets.xcassets */,
-				D850ED9B1C75FF4C006BAA04 /* Images.xcassets */,
 				019BB5661C5F0F3200B6A085 /* Main.storyboard */,
 				019BB5251C5EF2CC00B6A085 /* LaunchScreen.storyboard */,
 				D850ED991C75FEFB006BAA04 /* keys (5).plist */,
@@ -334,7 +331,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D850ED9A1C75FEFB006BAA04 /* keys (5).plist in Resources */,
-				D850ED9C1C75FF4C006BAA04 /* Images.xcassets in Resources */,
 				019BB5271C5EF2CC00B6A085 /* LaunchScreen.storyboard in Resources */,
 				019BB5241C5EF2CC00B6A085 /* Assets.xcassets in Resources */,
 				019BB5681C5F0F3200B6A085 /* Main.storyboard in Resources */,
