@@ -90,7 +90,7 @@ class InterstitialViewController: UIViewController {
         let images = gifAnimationImages(result)
       
         self.gifView.animationImages = images;
-//        self.gifView.animationDuration = 1.0
+        self.gifView.animationDuration = 1.0
         self.gifView.startAnimating()
     }
     

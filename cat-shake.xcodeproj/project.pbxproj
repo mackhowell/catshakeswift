@@ -31,6 +31,8 @@
 		019BB56A1C5F2F7B00B6A085 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019BB5691C5F2F7B00B6A085 /* YouTubePlayer.framework */; };
 		019BB56B1C5F2F7B00B6A085 /* YouTubePlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 019BB5691C5F2F7B00B6A085 /* YouTubePlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		019BB56D1C5F2F9D00B6A085 /* YouTubePlayer.framework.dSYM in Carthage Copy DSYM Files Step */ = {isa = PBXBuildFile; fileRef = 019BB56C1C5F2F9D00B6A085 /* YouTubePlayer.framework.dSYM */; };
+		4B46A6E41C7BF76D00C8B054 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B46A6E31C7BF76D00C8B054 /* keys.plist */; };
+		4B46A6E61C7C020B00C8B054 /* PlayerLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B46A6E51C7C020B00C8B054 /* PlayerLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		019BB5671C5F0F3200B6A085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		019BB5691C5F2F7B00B6A085 /* YouTubePlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubePlayer.framework; path = Carthage/Build/iOS/YouTubePlayer.framework; sourceTree = "<group>"; };
 		019BB56C1C5F2F9D00B6A085 /* YouTubePlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = YouTubePlayer.framework.dSYM; path = Carthage/Build/iOS/YouTubePlayer.framework.dSYM; sourceTree = "<group>"; };
+		4B46A6E31C7BF76D00C8B054 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		4B46A6E51C7C020B00C8B054 /* PlayerLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,11 +171,13 @@
 			children = (
 				019BB51C1C5EF2CC00B6A085 /* AppDelegate.swift */,
 				019BB5601C5F051000B6A085 /* NetworkManager.swift */,
+				4B46A6E51C7C020B00C8B054 /* PlayerLogger.swift */,
 				019BB55F1C5F03E000B6A085 /* View Controllers */,
 				019BB5231C5EF2CC00B6A085 /* Assets.xcassets */,
 				019BB5661C5F0F3200B6A085 /* Main.storyboard */,
 				019BB5251C5EF2CC00B6A085 /* LaunchScreen.storyboard */,
 				019BB5281C5EF2CC00B6A085 /* Info.plist */,
+				4B46A6E31C7BF76D00C8B054 /* keys.plist */,
 			);
 			path = "cat-shake";
 			sourceTree = "<group>";
@@ -327,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B46A6E41C7BF76D00C8B054 /* keys.plist in Resources */,
 				019BB5271C5EF2CC00B6A085 /* LaunchScreen.storyboard in Resources */,
 				019BB5241C5EF2CC00B6A085 /* Assets.xcassets in Resources */,
 				019BB5681C5F0F3200B6A085 /* Main.storyboard in Resources */,
@@ -379,6 +386,7 @@
 				019BB51F1C5EF2CC00B6A085 /* ContainerViewController.swift in Sources */,
 				019BB51D1C5EF2CC00B6A085 /* AppDelegate.swift in Sources */,
 				015A428A1C62FADE003372E4 /* VideoViewController.swift in Sources */,
+				4B46A6E61C7C020B00C8B054 /* PlayerLogger.swift in Sources */,
 				019BB55E1C5F03D100B6A085 /* InterstitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

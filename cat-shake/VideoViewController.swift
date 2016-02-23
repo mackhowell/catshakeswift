@@ -15,12 +15,17 @@ class VideoViewController: UIViewController {
     let playerView = UIView()
     var previousVideo: Video?
     weak var delegate: TriggerVideoFromChildViewController?
+//    let logger = PlayerLogger()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPlayerView()
+        
 //        let defaultCenter = NSNotificationCenter.defaultCenter()
-//        defaultCenter.addObserver(self, selector: "playerStateDidChange", name: MPMoviePlayerLoadStateDidChangeNotification, object: nil)
+//        defaultCenter.addObserver(self, selector: "moviePlayerPlaybackStateDidChange:", name: MPMoviePlayerPlaybackStateDidChangeNotification, object: player?.moviePlayer)
+//        defaultCenter.addObserver(self, selector: "moviePlayerPlaybackDidFinish:", name: MPMoviePlayerPlaybackDidFinishNotification, object: player?.moviePlayer)
+        
+        let logger = PlayerLogger().sharedManager.setEnabled = true
     }
     
     func setupPlayerView() {
@@ -32,12 +37,57 @@ class VideoViewController: UIViewController {
         }
     }
     
-//    func playerStateDidChange() {
-//        print("player state = \(player?.moviePlayer.playbackState.rawValue)")
+    func moviePlayerPlaybackStateDidChange(notification: NSNotification) {
+//        print("player state = \(player?.moviePlayer.playbackState)")
 //        if player?.moviePlayer.playbackState == MPMoviePlaybackState. {
 //            delegate?.prepareVideo()
 //        }
-//    }
+        let mpc = notification.object as? MPMoviePlayerController
+        guard let playerController = mpc else {
+            return
+        }
+        
+        var playbackState = ""
+        switch playerController.playbackState {
+        case .Stopped:
+            playbackState = "stopped"
+        case .Playing:
+            playbackState = "playing"
+        case .Paused:
+            playbackState = "paused"
+        case .Interrupted:
+            playbackState = "interrupted"
+        default:
+            playbackState = "default"
+        }
+        
+        print("player playing state: \(playbackState)")
+    }
+    
+    func moviePlayerPlaybackDidFinish(notification: NSNotification) {
+        let finishReason = notification.userInfo?[XCDMoviePlayerPlaybackDidFinishErrorUserInfoKey] as? MPMovieFinishReason
+        let error = notification.userInfo?[XCDMoviePlayerPlaybackDidFinishErrorUserInfoKey] as? NSError
+        var reasonString = ""
+        
+        guard let reason = finishReason else {
+            print("coudln't unwrap finish reason")
+            return
+        }
+        
+        switch (reason) {
+        case .PlaybackEnded:
+            reasonString = "Playback Ended"
+            break
+        case .PlaybackError:
+            reasonString = "Playback Error: \(error)"
+            break
+        case .UserExited:
+            reasonString = "User Exited"
+            break
+        }
+        
+        print("player finished with reason: \(reasonString)")
+    }
     
     func prepareVideo(var playlist: VideoList) {
         if let previoius = previousVideo {

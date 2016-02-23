@@ -23,7 +23,6 @@ class ContainerViewController: UIViewController, TriggerVideoFromChildViewContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
         setupSubControllers()
         
         // Gets first 50 videos
@@ -41,10 +40,11 @@ class ContainerViewController: UIViewController, TriggerVideoFromChildViewContro
     }
 
     func setupSubControllers() {
-        view.addSubview(interstitialViewController.view)
-        addChildViewController(interstitialViewController)
         view.addSubview(videoViewController.view)
         addChildViewController(videoViewController)
+        
+        view.addSubview(interstitialViewController.view)
+        addChildViewController(interstitialViewController)
     }
     
     func swapScreens() {

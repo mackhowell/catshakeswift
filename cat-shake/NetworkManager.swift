@@ -59,6 +59,7 @@ struct NetworkManager {
         
         let file = NSBundle.mainBundle().pathForResource("keys", ofType: "plist")
         guard let keysFile = file else {
+            print("keys file not found")
             return
         }
         let fileArray = NSArray(contentsOfFile: keysFile)
