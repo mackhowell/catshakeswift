@@ -27,12 +27,10 @@
 		019BB55C1C5F009700B6A085 /* SwiftyJSON.framework.dSYM in Carthage Copy DSYM Files Step */ = {isa = PBXBuildFile; fileRef = 019BB5591C5F009700B6A085 /* SwiftyJSON.framework.dSYM */; };
 		019BB55E1C5F03D100B6A085 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BB55D1C5F03D100B6A085 /* InterstitialViewController.swift */; };
 		019BB5611C5F051000B6A085 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BB5601C5F051000B6A085 /* NetworkManager.swift */; };
-		019BB5631C5F070200B6A085 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 019BB5621C5F070200B6A085 /* keys.plist */; };
 		019BB5681C5F0F3200B6A085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019BB5661C5F0F3200B6A085 /* Main.storyboard */; };
 		019BB56A1C5F2F7B00B6A085 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019BB5691C5F2F7B00B6A085 /* YouTubePlayer.framework */; };
 		019BB56B1C5F2F7B00B6A085 /* YouTubePlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 019BB5691C5F2F7B00B6A085 /* YouTubePlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		019BB56D1C5F2F9D00B6A085 /* YouTubePlayer.framework.dSYM in Carthage Copy DSYM Files Step */ = {isa = PBXBuildFile; fileRef = 019BB56C1C5F2F9D00B6A085 /* YouTubePlayer.framework.dSYM */; };
-		4B828F731C6C1539002DDFAE /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B828F721C6C1539002DDFAE /* keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,11 +107,9 @@
 		019BB5591C5F009700B6A085 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
 		019BB55D1C5F03D100B6A085 /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		019BB5601C5F051000B6A085 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		019BB5621C5F070200B6A085 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		019BB5671C5F0F3200B6A085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		019BB5691C5F2F7B00B6A085 /* YouTubePlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubePlayer.framework; path = Carthage/Build/iOS/YouTubePlayer.framework; sourceTree = "<group>"; };
 		019BB56C1C5F2F9D00B6A085 /* YouTubePlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = YouTubePlayer.framework.dSYM; path = Carthage/Build/iOS/YouTubePlayer.framework.dSYM; sourceTree = "<group>"; };
-		4B828F721C6C1539002DDFAE /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,8 +171,6 @@
 				019BB5231C5EF2CC00B6A085 /* Assets.xcassets */,
 				019BB5661C5F0F3200B6A085 /* Main.storyboard */,
 				019BB5251C5EF2CC00B6A085 /* LaunchScreen.storyboard */,
-				4B828F721C6C1539002DDFAE /* keys.plist */,
-				019BB5621C5F070200B6A085 /* keys.plist */,
 				019BB5281C5EF2CC00B6A085 /* Info.plist */,
 			);
 			path = "cat-shake";
@@ -333,8 +327,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B828F731C6C1539002DDFAE /* keys.plist in Resources */,
-				019BB5631C5F070200B6A085 /* keys.plist in Resources */,
 				019BB5271C5EF2CC00B6A085 /* LaunchScreen.storyboard in Resources */,
 				019BB5241C5EF2CC00B6A085 /* Assets.xcassets in Resources */,
 				019BB5681C5F0F3200B6A085 /* Main.storyboard in Resources */,
@@ -534,6 +526,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "cat-shake/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.burningflowe.rs.cat-shake";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -549,6 +542,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "cat-shake/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.burningflowe.rs.cat-shake";
 				PRODUCT_NAME = "$(TARGET_NAME)";
