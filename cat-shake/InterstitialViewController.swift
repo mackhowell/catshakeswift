@@ -10,17 +10,14 @@
 import UIKit
 
 class InterstitialViewController: UIViewController {
-    //var catGifArray = [UIImage]()
     
     let gifView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     // view.backgroundColor = UIColor.redColor()
         setUpGifView()
-     // self.checkAnimationImages(self.catGifName)
-     //animateImage()
     }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         playRandomGif()
@@ -33,6 +30,7 @@ class InterstitialViewController: UIViewController {
             make.centerY.equalTo(view)
         }
     }
+    
     var catGifName:[String] = [
         "3d",
         "piano1",
@@ -87,15 +85,12 @@ class InterstitialViewController: UIViewController {
     }
     
     func playRandomGif() {
-        // select random element from catGifNameArray
-        //let randomElement = catGifName.first
-        
         let randomElement = Int(arc4random_uniform(UInt32(catGifName.count)))
-        var result = self.catGifName[randomElement]
+        let result = self.catGifName[randomElement]
         let images = gifAnimationImages(result)
       
         self.gifView.animationImages = images;
-        self.gifView.animationDuration = 1.0
+//        self.gifView.animationDuration = 1.0
         self.gifView.startAnimating()
     }
     
