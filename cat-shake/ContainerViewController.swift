@@ -23,6 +23,7 @@ class ContainerViewController: UIViewController, TriggerVideoFromChildViewContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.whiteColor()
         setupSubControllers()
         
         // Gets first 50 videos
