@@ -1,5 +1,5 @@
-github "Alamofire/Alamofire" "3.2.0"
-github "SnapKit/SnapKit" "0.19.1"
+github "Alamofire/Alamofire" "3.4.0"
+github "SnapKit/SnapKit" "0.21.0"
 github "gilesvangruisen/Swift-YouTube-Player" "v0.3.0"
 github "SwiftyJSON/SwiftyJSON" "2.3.3"
-github "0xced/XCDYouTubeKit" "2.5.1"
+github "0xced/XCDYouTubeKit" "2.5.2"

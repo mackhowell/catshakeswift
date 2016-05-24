@@ -25,7 +25,8 @@ class VideoViewController: UIViewController {
 //        defaultCenter.addObserver(self, selector: "moviePlayerPlaybackStateDidChange:", name: MPMoviePlayerPlaybackStateDidChangeNotification, object: player?.moviePlayer)
 //        defaultCenter.addObserver(self, selector: "moviePlayerPlaybackDidFinish:", name: MPMoviePlayerPlaybackDidFinishNotification, object: player?.moviePlayer)
         
-        let logger = PlayerLogger().sharedManager.setEnabled = true
+        // TODO: Use PlayerLogger to setup notifications on player.
+//        let logger = PlayerLogger.sharedManager.setEnabled = true
     }
     
     func setupPlayerView() {
